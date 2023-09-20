@@ -1,0 +1,29 @@
+{
+  "name": "langchain-examples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@pinecone-database/pinecone": "1.0.0",
+    "add": "^2.0.6",
+    "cheerio": "^1.0.0-rc.12",
+    "cohere-ai": "^5.0.2",
+    "dotenv": "^16.3.1",
+    "langchain": "^0.0.144"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "pinecone",
+    "langchain"
+  ],
+  "author": "Thirunavukkarasu",
+  "license": "ISC",
+  "description": ""
+}
