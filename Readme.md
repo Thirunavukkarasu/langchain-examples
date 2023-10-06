@@ -57,3 +57,73 @@ A sample Streamlit web application for summarizing text using LangChain and Open
 ### [url-summary](https://github.com/thirunavukkarasu/langchain-examples/blob/main/url-summary)
 
 A sample Streamlit application to summarize URL content using LangChain and OpenAI.
+
+```mermaid
+graph TD
+  subgraph MobileApp
+    subgraph UserInterface
+      UI[User Interface]
+    end
+    subgraph Controllers
+      OM[Order Management Controller]
+      IM[Inventory Management Controller]
+      FM[Finance Management Controller]
+    end
+  end
+
+  subgraph Backend
+    subgraph APIs
+      ORAPI[Order API]
+      INAPI[Inventory API]
+      FINAPI[Finance API]
+    end
+    DB[Aurora Serverless<br/>Database]
+    ext[External Services]
+  end
+
+  subgraph External
+    PG[Payment Gateway]
+    NT[Notification Service]
+  end
+
+  subgraph Reporting
+    RP[Reporting & Analytics]
+  end
+
+  UI --> OM
+  UI --> IM
+  UI --> FM
+
+  OM --> ORAPI
+  OM --> DB
+  OM --> NT
+
+  IM --> INAPI
+  IM --> DB
+  IM --> NT
+
+  FM --> FINAPI
+  FM --> DB
+  FM --> PG
+  FM --> RP
+
+  ORAPI --> DB
+  INAPI --> DB
+  FINAPI --> DB
+
+  ext --> PG
+  ext --> NT
+
+  RP --> DB
+
+  aws --> VPC
+  VPC --> subnet1
+  VPC --> subnet2
+  VPC --> subnet3
+  aws --> UI
+  aws --> Backend
+  aws --> External
+  aws --> DB
+
+
+```
